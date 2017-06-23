@@ -32,6 +32,7 @@ import handlers
 urls = [
     # -------- 测试
     (r"/test", handlers.Hello),
+    (r"/", handlers.BlogList),
     (r"/blog/go_create", handlers.GoCreateBlog),
     (r"/blog/create", handlers.CreateBlog),
     (r"/blog/list", handlers.BlogList),
