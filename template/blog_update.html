@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改博客</title>
+</head>
+<body>
+
+    <center>
+
+    <form id="update_blog" action="/blog/update" method="post">
+        <input type="hidden" name="id" value="{{data['id']}}"/>
+        标题: <input type="text" name="title" placeholder="请输入标题..." size="40"
+            value="{{data['title']}}"
+            />
+
+        <br/>
+
+        内容: <textarea cols="80" rows="20" name="content">{{data['content']}}</textarea>
+
+        <br/>
+
+        <input type="submit" value="提交"/>
+
+    </form>
+
+    </center>
+
+</body>
+</html>

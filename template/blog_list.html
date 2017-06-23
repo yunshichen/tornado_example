@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客列表</title>
+</head>
+<body>
+
+    <a href="/blog/go_create">点此新建博客</a>
+
+    <h4>博客列表如下</h4>
+    <ul>
+        {% for data in list_data %}
+        <li>
+            <a href="/blog/detail?id={{data['id']}}">第{{data['order']}}篇: {{data['title']}}</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/blog/go_update?id={{data['id']}}">修改</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" onclick="do_delete_blog('{{data['id']}}')">删除</a>
+        </li>
+        {% end %}
+
+    </ul>
+
+</body>
+</html>
+<script>
+    function do_delete_blog(id){
+        if( ! confirm ('真的要删除这篇博客?') ){
+            return;
+        }
+
+        window.location.href = '/blog/delete?id=' + id;
+    }
+</script>
